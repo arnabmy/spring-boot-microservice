@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.customer.Customer;
+import com.example.demo.customer.CustomerRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -23,7 +26,7 @@ public class DemoApplication implements CommandLineRunner {
 
 		//save a couple of customers
 		repository.save(new Customer("Arnab", "Mohanty"));
-		repository.save(new Customer("Rachit ", "Gupta"));
+		repository.save(new Customer("Rachit", "Gupta"));
 
 		//fetch all customers 
 		System.out.println("Customers found with findAll....");
@@ -36,6 +39,11 @@ public class DemoApplication implements CommandLineRunner {
 		System.out.println("Customer found with findByFirstName('Arnab'):");
    	    System.out.println("--------------------------------");
 		System.out.print(repository.findByFirstName("Arnab"));
+
+
+		System.out.println("Customer found with findByFirstName('Rachit'):");
+   	    System.out.println("--------------------------------");
+		System.out.print(repository.findByFirstName("Rachit"));
 
 	}
 
